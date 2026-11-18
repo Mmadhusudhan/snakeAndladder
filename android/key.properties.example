@@ -1,0 +1,7 @@
+# Copy to android/key.properties (git-ignored) for Play Store builds.
+# Create the keystore once:
+#   keytool -genkey -v -keystore ~/snakes-ladders-release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias snakes
+storeFile=/Users/you/snakes-ladders-release.jks
+storePassword=CHANGE_ME
+keyAlias=snakes
+keyPassword=CHANGE_ME

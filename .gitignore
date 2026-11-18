@@ -1,0 +1,32 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+.vscode/
+coverage/
+pubspec.lock.bak
+
+# Platform
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+android/.gradle/
+android/local.properties
+android/key.properties
+*.jks
+*.keystore
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
+# Node backend
+backend/node_modules/
+backend/.env
+backend/serviceAccountKey.json
+
+# OS / misc
+.DS_Store
+*.log

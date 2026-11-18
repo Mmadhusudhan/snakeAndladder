@@ -1,0 +1,13 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "rating", "order": "DESCENDING" },
+        { "fieldPath": "wins", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
