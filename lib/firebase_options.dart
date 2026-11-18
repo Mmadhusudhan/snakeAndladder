@@ -36,30 +36,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: '${_placeholder}_WEB_API_KEY',
-    appId: '1:$messagingSenderId:web:REPLACE_ME',
-    messagingSenderId: messagingSenderId,
-    projectId: projectId,
-    authDomain: '$projectId.firebaseapp.com',
-    storageBucket: '$projectId.appspot.com',
+    apiKey: 'AIzaSyC0qBWN99XxCzdC_QZHkCJOGGwxyn0OJDk',
+    appId: '1:214273362799:web:d6b9e5d9f9486c8a0df69a',
+    messagingSenderId: '214273362799',
+    projectId: 'car-game-e403f',
+    authDomain: 'car-game-e403f.firebaseapp.com',
+    storageBucket: 'car-game-e403f.firebasestorage.app',
+    measurementId: 'G-F4HWZXPRWK',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: '${_placeholder}_ANDROID_API_KEY',
-    appId: '1:$messagingSenderId:android:REPLACE_ME',
-    messagingSenderId: messagingSenderId,
-    projectId: projectId,
-    storageBucket: '$projectId.appspot.com',
+    apiKey: 'AIzaSyCMJyb25Q9M_WeW11brJqHN5fFMZPqIics',
+    appId: '1:214273362799:android:6445f7a5c36b22cb0df69a',
+    messagingSenderId: '214273362799',
+    projectId: 'car-game-e403f',
+    storageBucket: 'car-game-e403f.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: '${_placeholder}_IOS_API_KEY',
-    appId: '1:$messagingSenderId:ios:REPLACE_ME',
-    messagingSenderId: messagingSenderId,
-    projectId: projectId,
-    storageBucket: '$projectId.appspot.com',
+    apiKey: 'AIzaSyCQe3l4RMC6zT4DhynQlYYfSPvbmqPfVM4',
+    appId: '1:214273362799:ios:4413b84c4c7f2c690df69a',
+    messagingSenderId: '214273362799',
+    projectId: 'car-game-e403f',
+    storageBucket: 'car-game-e403f.firebasestorage.app',
     iosBundleId: 'in.nextaqua.snakesLadders',
   );
-
   static const FirebaseOptions macos = ios;
 }

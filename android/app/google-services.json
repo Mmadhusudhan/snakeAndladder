@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "214273362799",
+    "project_id": "car-game-e403f",
+    "storage_bucket": "car-game-e403f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214273362799:android:6445f7a5c36b22cb0df69a",
+        "android_client_info": {
+          "package_name": "in.nextaqua.snakes_ladders"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMJyb25Q9M_WeW11brJqHN5fFMZPqIics"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

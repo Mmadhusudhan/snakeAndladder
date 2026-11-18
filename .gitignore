@@ -19,8 +19,6 @@ android/local.properties
 android/key.properties
 *.jks
 *.keystore
-android/app/google-services.json
-ios/Runner/GoogleService-Info.plist
 
 # Node backend
 backend/node_modules/

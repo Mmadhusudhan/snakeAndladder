@@ -26,10 +26,20 @@ class FirebaseBootstrap {
 
   static FirebaseStatus? get status => _status;
 
+  /// False while `lib/firebase_options.dart` still holds the template
+  /// placeholders (before `flutterfire configure` has been run).
+  static bool get isConfigured {
+    try {
+      return !DefaultFirebaseOptions.currentPlatform.apiKey.startsWith('REPLACE_ME');
+    } catch (_) {
+      return false;
+    }
+  }
+
   static Future<FirebaseStatus> initialize() async {
     final existing = _status;
     if (existing != null) return existing;
-    if (!DefaultFirebaseOptions.isConfigured) {
+    if (!isConfigured) {
       return _status = const FirebaseStatus.unavailable(
         'Firebase is not configured. Run `flutterfire configure` (see README).',
       );

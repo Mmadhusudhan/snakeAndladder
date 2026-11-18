@@ -192,32 +192,39 @@ validated: snakes go down, ladders go up, no cell is both, no chaining.
 
 Firebase project: `car-game-e403f` (project number `214273362799`).
 
-### One-time setup (not yet done on this machine)
+### Setup status (done on 18 Nov 2026)
+
+| Item | Status |
+|---|---|
+| Web, Android, iOS apps registered; `lib/firebase_options.dart`, `google-services.json`, `GoogleService-Info.plist` generated | ✅ |
+| Cloud Firestore `(default)` database, region `asia-south1` (Mumbai) | ✅ |
+| Firestore rules + composite index deployed | ✅ |
+| Realtime Database `car-game-e403f-default-rtdb`, region `asia-southeast1` (Singapore) | ✅ |
+| Realtime Database rules deployed | ✅ |
+| Authentication: Anonymous + Google sign-in | ⏳ console step (below) |
+| Backend on Cloud Run + `API_BASE_URL` | ⏳ |
+
+Tooling used (Node lives outside PATH on this Mac):
 
 ```bash
-# Node lives outside PATH on this Mac:
-export PATH="$HOME/development/node/bin:$PATH"
-
-npm install -g firebase-tools && firebase login
-dart pub global activate flutterfire_cli
-flutterfire configure --project=car-game-e403f        # writes lib/firebase_options.dart
-firebase deploy --only firestore:rules,firestore:indexes,database
+export PATH="$HOME/development/node/bin:$HOME/.pub-cache/bin:$PATH"
+firebase login                                   # one-time
+flutterfire configure --project=car-game-e403f   # re-run after adding platforms
+firebase deploy --only firestore,database        # after editing rules
 ```
 
-Also create a **Realtime Database** instance in the console and put its URL
-in `backend/.env` (`FIREBASE_DATABASE_URL`).
+**Authentication (console):** open
+https://console.firebase.google.com/project/car-game-e403f/authentication,
+click *Get started*, then under *Sign-in method* enable **Anonymous** and
+**Google** (pick a support e-mail). For Google on Android, add your debug and
+release SHA-1 / SHA-256 fingerprints under *Project settings → Your apps →
+Android* (`./gradlew signingReport` in `android/` prints them) and re-run
+`flutterfire configure`. On web, add your hosting domain to *Authorized
+domains*.
 
-In the Firebase console enable **Authentication → Sign-in method → Anonymous
-and Google**. For Google on Android add the SHA-1 of your debug/release
-keys; on web add your hosting domain to *Authorized domains*.
-
-Until `flutterfire configure` has run, `lib/firebase_options.dart` is a
-template whose `isConfigured` is false, and the app starts in **offline
-mode**: a local guest, stats kept in memory, Google button hidden. Nothing
-crashes and the whole game is playable. The generated options file is safe
-to commit (Firebase client keys are not secrets; access is governed by the
-Firestore rules and, later, App Check). Service-account keys for the backend
-are the real secrets and stay git-ignored.
+Firebase client keys in these files are not secrets (access is governed by
+the security rules), so they are committed. The backend's service-account
+key is the real secret and stays git-ignored.
 
 ### How accounts work
 

@@ -19,5 +19,34 @@
   },
   "database": {
     "rules": "database.rules.json"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "car-game-e403f",
+          "appId": "1:214273362799:android:6445f7a5c36b22cb0df69a",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "car-game-e403f",
+          "appId": "1:214273362799:ios:4413b84c4c7f2c690df69a",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "car-game-e403f",
+          "configurations": {
+            "android": "1:214273362799:android:6445f7a5c36b22cb0df69a",
+            "ios": "1:214273362799:ios:4413b84c4c7f2c690df69a",
+            "web": "1:214273362799:web:d6b9e5d9f9486c8a0df69a"
+          }
+        }
+      }
+    }
   }
 }
